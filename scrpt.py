@@ -34,7 +34,7 @@ formats = {
     "video": ["avi", "mov", "mp4", "mpg", "mpeg", "m4v", "mkv", "wmv", "flv", "MOV"],
     "certificate": ["pfx", "cer", "p12", "p7b"],
     "torrent": ["torrent"],
-    "config": ["conf", "msi", "py"]
+    "config": ["conf", "msi", "py"],
     "other": [],
            }
 
