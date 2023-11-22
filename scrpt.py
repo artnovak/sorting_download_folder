@@ -15,7 +15,7 @@ button.pack()
 root.mainloop()
 
 
-print(value, "sdaasd")
+print(f"Путь до папки: {value}")
 
 os.chdir(rf"{value}")
 
@@ -29,8 +29,6 @@ formats = {
     "other": [],
            }
 
-print("Все папки и файлы:")
-print(*os.listdir(), sep="\n")
 list_files = os.listdir()
 set_files = set()
 for k, v in formats.items():
@@ -49,8 +47,9 @@ for i in range(len(list_files)):
     for k, v in formats.items():
         try:
             if format_file in v:
-                os.replace(fr"{list_files[i]}", rf"{donwload}]{k}\{list_files[i]}")
+                os.replace(fr"{list_files[i]}", rf"{value}]{k}\{list_files[i]}")
         except:
             print("Некоторые файлы могут быть заняты другими программами.")
             continue
-
+print(f"как выглядит папка '{value}' после сортировки: ")
+print(*os.listdir(fr"{value}"), sep="\n")
