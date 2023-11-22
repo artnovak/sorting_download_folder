@@ -28,11 +28,13 @@ os.chdir(rf"{value}")
 
 formats = {
     "docx": ["doc", "csv", "docx", "pdf", "ppt", "xlsx", "txt", "json", "rtf", "msg"],
-    "picture": ["png", "jpg", "gif", "bmp"],
+    "picture": ["png", "jpg", "gif", "bmp", "PNG", "GIF", "JPEG", "jpeg", "JPG", "HEIC"],
     "archive": ["zip", "rar", "7z", "tar", "gz", "bz2", "xz", "lzma"],
     "audio": ["mp3", "aac", "ogg", "wav"],
-    "video": ["avi", "mov", "mp4", "mpg", "mpeg", "m4v", "mkv", "wmv", "flv"],
+    "video": ["avi", "mov", "mp4", "mpg", "mpeg", "m4v", "mkv", "wmv", "flv", "MOV"],
     "certificate": ["pfx", "cer", "p12", "p7b"],
+    "torrent": ["torrent"],
+    "config": ["conf", "msi", "py"]
     "other": [],
            }
 
@@ -52,17 +54,17 @@ for i in range(len(list_files)):
     format_file = format_file[::-1]
     set_files.add(format_file)
     for k, v in formats.items():
+        try:
+            if format_file in v:
+                os.replace(fr"{list_files[i]}", rf"{value}\{k}\{list_files[i]}")
+        except:
+            print("Некоторые файлы могут быть заняты другими программами.")
+            continue
 
-        if format_file in v:
-            os.replace(fr"{list_files[i]}", rf"{value}\{k}\{list_files[i]}")
-            print("asdasd")
-
-        # print("Некоторые файлы могут быть заняты другими программами.")
-        # continue
-    other = os.listdir()
-    for i in range(len(other)):
-        if not os.path.isdir(other[i]):
-            os.replace(fr"{other[i]}", rf"{value}\other\{other[i]}")
+other = os.listdir()
+for i in range(len(other)):
+     if not os.path.isdir(other[i]):
+         os.replace(fr"{other[i]}", rf"{value}\other\{other[i]}")
 
 print(f"как выглядит папка '{value}' после сортировки: ")
 print(*os.listdir(fr"{value}"), sep="\n")
