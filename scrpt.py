@@ -5,12 +5,19 @@ def get_entry_value():
     value = entry.get() # Получение значения из Entry
     root.destroy()
 
-
+def change():
+    button['text'] = "fill up absolute path for download folder"
 
 root = Tk()
-entry = Entry(root)
+entry = Entry(root, width=50)
 entry.pack()
-button = Button(root, text="Введите путь до Папки", command=get_entry_value)
+button = Button(
+    root,
+    text="fill up absolute path for download folder",
+    command=get_entry_value,
+    width=40,
+    height=3)
+button.config(command=change())
 button.pack()
 root.mainloop()
 
