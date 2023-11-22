@@ -10,7 +10,7 @@ def get_entry_value():
 root = Tk()
 entry = Entry(root)
 entry.pack()
-button = Button(root, text="Получить значение", command=get_entry_value)
+button = Button(root, text="Введите путь до Папки", command=get_entry_value)
 button.pack()
 root.mainloop()
 
