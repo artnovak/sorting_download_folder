@@ -1,6 +1,23 @@
 import os
-import time
-os.chdir(r"C:\Users\21004078\Downloads")
+from tkinter import Tk, Entry, Button
+def get_entry_value():
+    global value
+    value = entry.get() # Получение значения из Entry
+    root.destroy()
+
+
+
+root = Tk()
+entry = Entry(root)
+entry.pack()
+button = Button(root, text="Получить значение", command=get_entry_value)
+button.pack()
+root.mainloop()
+
+
+print(value, "sdaasd")
+
+os.chdir(rf"{value}")
 
 formats = {
     "docx": ["doc", "csv", "docx", "pdf", "ppt", "xlsx", "txt", "json", "rtf", "msg"],
@@ -32,7 +49,7 @@ for i in range(len(list_files)):
     for k, v in formats.items():
         try:
             if format_file in v:
-                os.replace(f"{list_files[i]}", rf"C:\Users\21004078\Downloads\{k}\{list_files[i]}")
+                os.replace(fr"{list_files[i]}", rf"{donwload}]{k}\{list_files[i]}")
         except:
             print("Некоторые файлы могут быть заняты другими программами.")
             continue
