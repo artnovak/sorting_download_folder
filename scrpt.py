@@ -52,11 +52,17 @@ for i in range(len(list_files)):
     format_file = format_file[::-1]
     set_files.add(format_file)
     for k, v in formats.items():
-        try:
-            if format_file in v:
-                os.replace(fr"{list_files[i]}", rf"{value}]{k}\{list_files[i]}")
-        except:
-            print("Некоторые файлы могут быть заняты другими программами.")
-            continue
+
+        if format_file in v:
+            os.replace(fr"{list_files[i]}", rf"{value}\{k}\{list_files[i]}")
+            print("asdasd")
+
+        # print("Некоторые файлы могут быть заняты другими программами.")
+        # continue
+    other = os.listdir()
+    for i in range(len(other)):
+        if not os.path.isdir(other[i]):
+            os.replace(fr"{other[i]}", rf"{value}\other\{other[i]}")
+
 print(f"как выглядит папка '{value}' после сортировки: ")
 print(*os.listdir(fr"{value}"), sep="\n")
