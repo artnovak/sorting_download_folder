@@ -9,7 +9,7 @@ def choose_directory():
     frm.quit()
 
 def quitWin():
-    res = messagebox.askyesno('Оля ты чиво', 'are you sure about that?')
+    res = messagebox.askyesno('STOP', 'are you sure about that?')
     if res == True:
         messagebox.showinfo('info', '1 ... 2 ... 3')
         time.sleep(3)
