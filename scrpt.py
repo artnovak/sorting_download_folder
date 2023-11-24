@@ -6,6 +6,7 @@ def choose_directory():
     messagebox.showinfo('info', 'Choose the directory where you want to sort files')
     global input_value
     input_value = filedialog.askdirectory()
+    frm.quit()
 
 def quitWin():
     res = messagebox.askyesno('Оля ты чиво', 'are you sure about that?')
