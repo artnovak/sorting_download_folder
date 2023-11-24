@@ -8,10 +8,10 @@ def choose_directory():
     input_value = filedialog.askdirectory()
 
 def quitWin():
-    res = messagebox.askyesno('Ну шо ты так', '?')
+    res = messagebox.askyesno('Оля ты чиво', 'are you sure about that?')
     if res == True:
-        messagebox.showinfo('countdown', 'killing window in 5 seconds')
-        time.sleep(5)
+        messagebox.showinfo('info', '1 ... 2 ... 3')
+        time.sleep(3)
         quit()
     elif res == False:
         pass
