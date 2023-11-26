@@ -1,4 +1,4 @@
-# sorting_download_folder
+# sorting_folder
 A simple python script to sort files by category in a folder.
 
 
