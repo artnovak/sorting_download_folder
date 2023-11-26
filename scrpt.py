@@ -7,23 +7,11 @@ import webbrowser
 import os
 
 
-os.system('python new_window.py')
-
 def callback(url):
     webbrowser.open_new(url)
 
 def about_us():
     os.system('python new_window.py')
-# def about_us():
-#     first = Toplevel()
-#     c = tk.Canvas(first, width=500, height=500)
-#     img = ImageTk.PhotoImage(Image.open("D:\Projects\project_sort\welcome.png"))
-#     c.create_image(0, 0, image=img, anchor="nw")
-#     b = tk.Label(text="", anchor="sw")
-#     link1 = Label(first, text="visit my github", fg="blue", cursor="hand2")
-#     link1.bind("<Button-1>", lambda e: callback("https://github.com/artnovak"))
-#     first.mainloop()
-
 
 def choose_directory():
     messagebox.showinfo('info', 'Choose the directory where you want to sort files')
@@ -49,7 +37,7 @@ frm.grid()
 ttk.Label(frm, text='Choose the directory where you want to sort files').grid(row=0, column=0, sticky="W")
 ttk.Label(frm, text='').grid(row=1)
 ttk.Button(frm, text="Quit", command=quitWin).grid(row=2, column=2)
-ttk.Button(frm, text="about us", command=about_us()).grid(row=2, column=0, sticky='W')
+ttk.Button(frm, text="about us", command=about_us).grid(row=2, column=0, sticky='W')
 ttk.Button(frm,
     text="choose directory",
     command=choose_directory).grid(row=2, column=3)
