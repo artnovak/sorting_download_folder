@@ -4,10 +4,6 @@ A simple python script to sort files by category in a folder.
 
 For using this script you should use CLI. 
 
-![Uploading Безымянный.png…]()
-
-
-
 
 After that, a window will appear and offer you to click one of two buttons:
 chose directory and quit. 
