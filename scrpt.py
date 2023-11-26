@@ -1,6 +1,17 @@
-import os
-from tkinter import Tk, Entry, Button, filedialog, ttk, messagebox
+import tkinter as  tk
+from tkinter import Tk, Entry, Button, filedialog, ttk, messagebox, Canvas, PhotoImage
 import time
+from tkinter import *
+from PIL import Image, ImageTk
+import webbrowser
+import os
+
+
+def callback(url):
+    webbrowser.open_new(url)
+
+def about_us():
+    os.system('python new_window.py')
 
 def choose_directory():
     messagebox.showinfo('info', 'Choose the directory where you want to sort files')
@@ -18,22 +29,25 @@ def quitWin():
         pass
     else:
         messagebox.showerror('error', 'something went wrong!')
-try:
-    root = Tk()
-    frm = ttk.Frame(root, padding=10)
-    frm.grid()
-    ttk.Label(frm, text='Choose the directory where you want to sort files').grid(row=0, column=0, sticky="W")
-    ttk.Label(frm, text='').grid(row=1)
-    ttk.Button(frm, text="Quit", command=quitWin).grid(row=2, column=2)
-    ttk.Button(frm,
-        text="choose directory",
-        command=choose_directory).grid(row=2, column=3)
-    root.mainloop()
-    print(f"Путь до папки: {input_value}")
-    os.chdir(rf"{input_value}")
-except:
-    print("something went wrong")
-    quit()
+
+root = Tk()
+root.resizable(False, False)
+frm = ttk.Frame(root, padding=10)
+frm.grid()
+ttk.Label(frm, text='Choose the directory where you want to sort files').grid(row=0, column=0, sticky="W")
+ttk.Label(frm, text='').grid(row=1)
+ttk.Button(frm, text="Quit", command=quitWin).grid(row=2, column=2)
+ttk.Button(frm, text="about us", command=about_us).grid(row=2, column=0, sticky='W')
+ttk.Button(frm,
+    text="choose directory",
+    command=choose_directory).grid(row=2, column=3)
+root.mainloop()
+
+print(f"Путь до папки: {input_value}")
+os.chdir(rf"{input_value}")
+
+    # print("something went wrong")
+    # quit()
 formats = {
     "docx": ["doc", "csv", "docx", "pdf", "ppt", "xlsx", "txt", "json", "rtf", "msg"],
     "picture": ["png", "jpg", "gif", "bmp", "PNG", "GIF", "JPEG", "jpeg", "JPG", "HEIC"],
